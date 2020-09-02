@@ -36,11 +36,12 @@ class Solution:
         :return:
         """
         # 去除空格
-        s = re.sub(r"([-+*/])", r" \g<1> ", s.replace(" ", "")).split()  # 正则标记出操作符
+        s = re.sub(r"([+*/])", r" \g<1> ", s.replace(" ", "").replace(r"-", "+-")).split()  # 正则标记出操作符
+        print(s)
+
         # 将运算符和数字分开存两个列表
-        (first, *nums), operas = s[::2], s[1::2]
-        ret = [int(first)]
-        for i, num_and_opera in enumerate(zip(nums, operas)):
+        ret = [int(s[0])]
+        for num_and_opera in zip(s[2::2], s[1::2]):
             num, opera = num_and_opera
             if opera == "*":
                 ret[-1] *= int(num)
@@ -50,8 +51,7 @@ class Solution:
                 else:
                     ret[-1] //= int(num)
             else:
-                ret.append(-int(num) if opera == "-" else int(num))
-
+                ret.append(int(num))
         # print(ret)
         return sum(ret)
 

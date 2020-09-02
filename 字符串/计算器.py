@@ -100,10 +100,10 @@ class Solution:
                 nums.append(op_func(b, op, a))
         return int(nums[0])
 
-
-print(Solution().calculate("1+1-1"))
-print(Solution().calculate(" 3+5 / 2 "))
-print(Solution().calculate("1-1+1"))
-print(Solution().calculate("0-1"))
-print(Solution().calculate("2*3+4"))
+#
+# print(Solution().calculate("1+1-1"))
+# print(Solution().calculate(" 3+5 / 2 "))
+# print(Solution().calculate("1-1+1"))
+# print(Solution().calculate("0-1"))
+# print(Solution().calculate("2*3+4"))
 print(Solution().calculate("14/3*2"))
