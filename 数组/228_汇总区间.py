@@ -19,4 +19,4 @@ class Solution:
         return ret
 
 
-print(Solution().summaryRanges([0, 1, 2, 4, 5, 7]))  # ["0->2","4->5","7"]
+print(Solution().summaryRanges([0, 1, 2, 4, 5, 8, 9]))  # ["0->2","4->5","7"]
