@@ -13,6 +13,8 @@ class Solution:
         f = [0] * n  # 保存每一层的结果，到当前层当前元素的最小路径
         f[0] = triangle[0][0]  # 第一层，第一个元素的结果就是三角形顶的值
 
+        print(0, f, triangle[0])
+
         # 遍历获取每一层的结果
         for i in range(1, n):
             f[i] = f[i-1] + triangle[i][i]  # 边界条件，f[i]是最后一个元素
@@ -21,6 +23,8 @@ class Solution:
                 f[j] = min(f[j-1], f[j]) + triangle[i][j]
             # 这是边界条件，每一行的第最后一个元素只能由上一行的最后一个元素获得
             f[0] = f[0] + triangle[i][0]
+            print(i, f, triangle[i])
+
         return min(f)
 
 
